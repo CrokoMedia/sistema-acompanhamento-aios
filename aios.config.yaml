@@ -1,0 +1,70 @@
+version: 2.1.0
+projectName: sistema-acompanhamento-aios
+description: Sistema interativo de aprendizado AIOS em 8 semanas com mapa mental
+
+environment: development
+
+features:
+  - agents
+  - tasks
+  - workflows
+  - squads
+  - quality-gates
+
+ai:
+  provider: anthropic
+  model: claude-3-5-sonnet-20241022
+  temperature: 0.7
+
+agents:
+  default_visibility: full
+  enabled:
+    - analyst
+    - pm
+    - po
+    - sm
+    - architect
+    - dev
+    - qa
+    - data-engineer
+    - ux-design-expert
+    - devops
+
+project:
+  tech_stack:
+    frontend:
+      - Next.js 14+
+      - React 18+
+      - TypeScript 5+
+      - Tailwind CSS 3+
+    backend:
+      - Next.js API Routes
+      - NextAuth.js 4+
+      - Supabase Client
+    database:
+      - Supabase PostgreSQL
+    deployment:
+      - Vercel
+    ai:
+      - Anthropic Claude API
+
+quality:
+  coderabbit:
+    enabled: true
+    auto_review: true
+    language: pt-BR
+
+  testing:
+    unit_coverage_min: 80
+    e2e_required: true
+
+  linting:
+    eslint: true
+    prettier: true
+    typescript_strict: true
+
+documentation:
+  prd_path: docs/prd
+  epic_path: docs/epics
+  story_path: docs/stories
+  architecture_path: docs/architecture
